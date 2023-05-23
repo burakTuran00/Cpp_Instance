@@ -1,0 +1,69 @@
+#include <iostream>
+#include <cmath>
+
+int main()
+{
+    long num;
+    int counter = 0;
+    bool isPrime = true;
+
+    std::cout << "Enter a positive integer (0 to quit): ";
+    std::cin >> num;
+
+    while (num != 0)
+    {
+        if (num < 0)
+        {
+            std::cout << "Invalid input. Please enter a positive integer: ";
+            std::cin >> num;
+            continue;
+        }
+        if (num == 1)
+        {
+            std::cout << "1 is neither prime nor composite." << std::endl;
+            std::cout << "Enter a positive integer (0 to quit): ";
+            std::cin >> num;
+            continue;
+        }
+        if (num == 2)
+        {
+            std::cout << "2 is the smallest and only even prime number." << std::endl;
+            std::cout << "Enter a positive integer (0 to quit): ";
+            std::cin >> num;
+            continue;
+        }
+        if (num > 18446744073709551615)
+        {
+            std::cout << "Invalid input. Please enter a positive integer up to 18446744073709551615: ";
+            std::cin >> num;
+            continue;
+        }
+
+        for (int i = 2; i <= sqrt(num); ++i)
+        {
+            ++counter;
+            if (num % i == 0)
+            {
+                isPrime = false;
+                break;
+            }
+        }
+
+        if (isPrime)
+        {
+            std::cout << num << " is a prime number." << std::endl;
+        }
+        else
+        {
+            std::cout << num << " is a composite number." << std::endl;
+        }
+
+        std::cout << "The number of iterations for this input was " << counter << "." << std::endl;
+        counter = 0;
+        isPrime = true;
+        std::cout << "Enter a positive integer (0 to quit): ";
+        std::cin >> num;
+    }
+
+    return 0;
+}
