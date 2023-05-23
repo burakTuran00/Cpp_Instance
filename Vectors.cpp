@@ -75,9 +75,27 @@ public:
 
 int main()
 {
+    const double scaler = 1.2;
+
+    Vektor v1(1, 1, 1);
     Vektor v2(2, 1, 3);
 
     std::cout << v2 << std::endl;
+
+    Vektor v3 = v1 + v2;
+
+    std::cout << v3 << std::endl;
+
+    v1 = v1 * scaler;
+
+    std::cout << v1 << std::endl;
+
+    Vektor v0;
+
+    v0.setXAxis(1.0);
+    v0.setYAxis(2.0); // z-axsis will be zero.
+
+    std::cout << v0 << std::endl;
 
     return 0;
 }
