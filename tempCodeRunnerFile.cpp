@@ -1,1 +1,1 @@
-loopingNumber++;
+microseconds

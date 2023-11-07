@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/burak/OneDrive/Masaüstü/Projects/Cpp_Instance",
-      "program": "c:/Users/burak/OneDrive/Masaüstü/Projects/Cpp_Instance/build/Debug/outDebug",
+      "cwd": "d:/Projects/Cpp_Instance",
+      "program": "d:/Projects/Cpp_Instance/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
