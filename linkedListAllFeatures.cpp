@@ -356,6 +356,27 @@ void findOddNumbersSum(Node *head)
     std::cout << "Sum of the odd numbers: " << sum << std::endl;
 }
 
+Node *deleteSmallerThanK(Node *head, int k)
+{
+    Node *current = head;
+    Node *prev = head;
+
+    while (current != NULL)
+    {
+        if (current->data < k)
+        {
+            prev->next = current->next;
+            free(current);
+            current = prev;
+        }
+
+        prev = current;
+        current = current->next;
+    }
+
+    return head;
+}
+
 int main()
 {
     Node *head = NULL;
@@ -380,12 +401,14 @@ int main()
     findOddNumbersSum(head);
     print(head);
 
-    /* std::cout << "\nIndex::" << search(head, 25) << std::endl;
+    head = deleteSmallerThanK(head, 35);
+    print(head);
+
+    std::cout << "\nIndex::" << search(head, 25) << std::endl;
     std::cout << "Size::" << getSize(head) << std::endl;
     std::cout << "Average::" << getAverage(head) << std::endl;
     std::cout << "Max Value::" << getMaxElement(head) << std::endl;
     std::cout << "Min Value::" << getMinElement(head) << std::endl;
-    */
 
     /*head = delete_entire_list(head);
     print(head);
