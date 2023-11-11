@@ -1,5 +1,7 @@
 #include <iostream>
 #include <math.h>
+#include <limits>
+
 class Node
 {
 public:
@@ -241,7 +243,33 @@ int getMinElement(Node *head)
     return minValue;
 }
 
-// int getSecondMinElement(Node *head)
+int getSecondMinElement(Node *head)
+{
+    if (head == nullptr)
+        return -1;
+
+    int smallest = 100000;
+    int secondSmallest = 100000;
+
+    Node *temp = head;
+
+    while (temp != NULL)
+    {
+        if (temp->data < smallest)
+        {
+            secondSmallest = smallest;
+            smallest = temp->data;
+        }
+        else if (temp->data < secondSmallest && temp->data != smallest)
+        {
+            secondSmallest = temp->data;
+        }
+
+        temp = temp->next;
+    }
+
+    return secondSmallest;
+}
 
 int getSize(Node *head)
 {
@@ -272,6 +300,62 @@ double getAverage(Node *head)
     return sum / size;
 }
 
+Node *reverse(Node *head)
+{
+    Node *prev = NULL;
+    Node *next = NULL;
+
+    while (head != NULL)
+    {
+        next = head->next;
+        head->next = prev;
+        prev = head;
+        head = next;
+    }
+
+    head = prev;
+    return head;
+}
+
+void findSumAndMulThanSmallerK(Node *head, int k)
+{
+    Node *current = head;
+
+    int sum = 0;
+    int mul = 1;
+
+    while (current != NULL)
+    {
+        if (current->data < k)
+        {
+            sum += current->data;
+            mul *= current->data;
+        }
+
+        current = current->next;
+    }
+
+    std::cout << "Addition: " << sum << "\nMultiplication: " << mul << std::endl;
+}
+
+void findOddNumbersSum(Node *head)
+{
+    Node *temp = head;
+    int sum = 0;
+
+    while (temp != NULL)
+    {
+        if (temp->data % 2 != 0)
+        {
+            sum += temp->data;
+        }
+
+        temp = temp->next;
+    }
+
+    std::cout << "Sum of the odd numbers: " << sum << std::endl;
+}
+
 int main()
 {
     Node *head = NULL;
@@ -289,16 +373,23 @@ int main()
     // head = delete_last(head);
     // delete_at_position(&head, 1);
 
+    // head = reverse(head);
+
+    findSumAndMulThanSmallerK(head, 10);
+    std::cout << "Second smallest: " << getSecondMinElement(head) << std::endl;
+    findOddNumbersSum(head);
     print(head);
 
-    std::cout << "\nIndex::" << search(head, 25) << std::endl;
+    /* std::cout << "\nIndex::" << search(head, 25) << std::endl;
     std::cout << "Size::" << getSize(head) << std::endl;
     std::cout << "Average::" << getAverage(head) << std::endl;
     std::cout << "Max Value::" << getMaxElement(head) << std::endl;
     std::cout << "Min Value::" << getMinElement(head) << std::endl;
+    */
 
-    head = delete_entire_list(head);
+    /*head = delete_entire_list(head);
     print(head);
-    std::cout << "Size::" << getSize(head) << std::endl;
+    std::cout << "Size::" << getSize(head) << std::endl;*/
+
     return 0;
 }

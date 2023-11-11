@@ -211,6 +211,10 @@ void group(Node *head, int maxRepeat)
                 std::cout << i + 1 << " ";
             }
         }
+        else if (array2[i] == 0)
+        {
+            return;
+        }
         else
         {
             for (int k = 0; k < array2[i]; k++)
@@ -237,6 +241,8 @@ int main()
     add_begin(&head, 7);
     add_begin(&head, 6);
     add_begin(&head, 6);
+    add_begin(&head, 11);
+    add_begin(&head, 7);
     add_begin(&head, 5);
     add_begin(&head, 4);
     add_begin(&head, 1);
@@ -250,6 +256,7 @@ int main()
     add_begin(&head, 1);
 
     group(head, 10);
+    group(head, 3);
     group(head, 2);
     group(head, 1);
 
