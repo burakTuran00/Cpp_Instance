@@ -213,7 +213,7 @@ void group(Node *head, int maxRepeat)
         }
         else if (array2[i] == 0)
         {
-            return;
+            continueg;
         }
         else
         {
