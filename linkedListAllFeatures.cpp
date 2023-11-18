@@ -352,7 +352,8 @@ void findSumAndMulBiggerThanK(Node *head, int k)
         temp = temp->next;
     }
 
-    std::cout << "Addition: " << sum << "\nMultiplication: " << mul << std::endl;
+    std::cout << "Addition: " << sum << std::endl;
+    std::cout << "Multipication: " << mul << std::endl;
 }
 
 void findSumandMulIfEqualsK(Node *head, int k)
