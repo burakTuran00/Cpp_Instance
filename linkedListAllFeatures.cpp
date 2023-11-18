@@ -23,7 +23,6 @@ void add_at_position(Node *head, int data, int position)
     ptr2->data = data;
     ptr2->next = NULL;
 
-    position--;
     while (position != 1)
     {
         ptr = ptr->next;
@@ -337,6 +336,45 @@ void findSumAndMulThanSmallerK(Node *head, int k)
     std::cout << "Addition: " << sum << "\nMultiplication: " << mul << std::endl;
 }
 
+void findSumAndMulBiggerThanK(Node *head, int k)
+{
+    int sum = 0, mul = 1;
+    Node *temp = head;
+
+    while (temp->next != NULL)
+    {
+        if (temp->data > k)
+        {
+            sum += temp->data;
+            mul *= temp->data;
+        }
+
+        temp = temp->next;
+    }
+
+    std::cout << "Addition: " << sum << "\nMultiplication: " << mul << std::endl;
+}
+
+void findSumandMulIfEqualsK(Node *head, int k)
+{
+    int sum = 0, mul = 1;
+
+    Node *temp = head;
+
+    while (temp != NULL)
+    {
+        if (temp->data == k)
+        {
+            sum += temp->data;
+            mul *= temp->data;
+        }
+
+        temp = temp->next;
+    }
+
+    std::cout << "Addition: " << sum << "\nMultipication: " << mul << std::endl;
+}
+
 void findOddNumbersSum(Node *head)
 {
     Node *temp = head;
@@ -388,6 +426,7 @@ int main()
     add_begin(&head, 201);
     add_end(&head, 25);
     add_end(&head, 70);
+    add_at_position(head, 100, 5);
 
     // head = delete_last(head);
     // head = delete_last(head);
@@ -396,6 +435,7 @@ int main()
     // head = reverse(head);
 
     findSumAndMulThanSmallerK(head, 10);
+    findSumAndMulBiggerThanK(head, 50);
     std::cout << "Second smallest: " << getSecondMinElement(head) << std::endl;
     findOddNumbersSum(head);
     print(head);
