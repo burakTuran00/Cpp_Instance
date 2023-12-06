@@ -19,6 +19,7 @@ void add_begin(Node **head, int data)
 void add_at_position(Node *head, int data, int position)
 {
     Node *ptr = head;
+    
     Node *ptr2 = new Node();
     ptr2->data = data;
     ptr2->next = NULL;
@@ -51,7 +52,7 @@ void add_end(Node **head, int data)
         ptr = ptr->next;
     }
 
-    current->next = ptr->next;
+    current->next = ptr->next; // ptr->next will be null.
     ptr->next = current;
 }
 

@@ -14,6 +14,20 @@ int main()
     ++*ptr;
     (*ptr)++;
     ++(*ptr);
+    ++*ptr;
+    std::cout << *ptr << std::endl;
+
+    return 0;
+
+    *ptr++;
+    *++ptr;
+    *(ptr++);
+    *(++ptr);
+
+    ++*ptr;
+    (*ptr)++;
+    ++(*ptr);
+
     std::cout << *ptr << std::endl;
 
     return 0;
