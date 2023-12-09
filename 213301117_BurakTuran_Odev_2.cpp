@@ -19,10 +19,14 @@ Node *newNode(int value)
 int findLevelUtil(Node *root, int value, int level)
 {
     if (root == nullptr)
+    {
         return 0;
+    }
 
     if (root->data == value)
+    {
         return level;
+    }
 
     int downLevel = findLevelUtil(root->left, value, level + 1);
 
@@ -32,7 +36,7 @@ int findLevelUtil(Node *root, int value, int level)
     }
 
     downLevel = findLevelUtil(root->right, value, level + 1);
-    
+
     return downLevel;
 }
 
@@ -41,9 +45,13 @@ void findLevel(Node *root, int value, int begin)
     int level = findLevelUtil(root, value, begin);
 
     if (level != 0)
+    {
         cout << "Level of " << value << ": " << level << endl;
+    }
     else
+    {
         cout << "Number Not Found" << endl;
+    }
 }
 
 int main()
