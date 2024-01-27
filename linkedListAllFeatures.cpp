@@ -127,6 +127,7 @@ Node *delete_last(Node *head)
         }
 
         temp2->next = NULL;
+        //temp2->next = temp->next;
 
         free(temp);
         temp = NULL;
@@ -457,3 +458,28 @@ int main()
 
     return 0;
 }
+
+
+/*
+-Bağlı listelerden sözel 3 soru
+-Infix posfix 1 soru
+-Büyük O notasyonu kod yorumu 1 soru
+-Verilen kod çalışınca yığın yapısındaki değişim ile ilgili 1 soru
+-Vizenin 1. Sorusu gibi 1 soru ( hatırlayan varmı)
+-Pointerlardan 1 soru
+-Hash tablolarından 1 soru
+-Max min heap ağaçlarından 1 soru
+-Arama sıralama algoritmalarından 1 soru
+-Bağlı listeye kod çalışınca sonuç ne olur 1 soru
+-Ağaç yapısında kod çalışınca sonuç ne olur 1 soru
+-Binary search ve binary tree search 1 soru
+-Dijkstra algoritması O(n) kıyaslama şeklinde 1 soru 
+-Avl ağaç yapısı sözel 1 soru 
+-Zaman karmaşıklığı 1 soru
+-Ağaçlar ile ilgili yaprak derinlik…. Nedir 1 soru
+-Dfs Bfs algoritması 1 soru
+-İnorder post order 1 soru
+-Algoritma analizi 1 soru
+-Avl ağacı üzerinde ekleme yapma ile ilgili 1 soru
+-Graf renklendirme 1 soru
+*/
